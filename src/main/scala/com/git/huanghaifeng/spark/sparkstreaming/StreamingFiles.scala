@@ -16,7 +16,7 @@
 // */
 //
 //// scalastyle:off println
-package com.gitlab.huanghaifeng.spark.sparkstreaming
+package com.git.huanghaifeng.spark.sparkstreaming
 
 
 import org.apache.spark.SparkConf

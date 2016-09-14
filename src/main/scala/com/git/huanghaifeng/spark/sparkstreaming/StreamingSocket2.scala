@@ -1,4 +1,4 @@
-package com.gitlab.huanghaifeng.spark.sparkstreaming
+package com.git.huanghaifeng.spark.sparkstreaming
 /**
  * @description
  * 监听localhost的7777端口，对每一行的输入进行计数
