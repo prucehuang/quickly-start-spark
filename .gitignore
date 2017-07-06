@@ -1,2 +1,11 @@
 /target/
 /.settings/
+.DS_Store
+.cache-main
+.cache-tests
+.classpath
+/.idea/
+.project
+/metastore_db/
+quickly-start-spark.iml
+
