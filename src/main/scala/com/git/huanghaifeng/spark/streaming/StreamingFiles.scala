@@ -16,7 +16,7 @@
 // */
 //
 //// scalastyle:off println
-package com.git.huanghaifeng.spark.sparkstreaming
+package com.git.huanghaifeng.spark.streaming
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{Seconds, StreamingContext}

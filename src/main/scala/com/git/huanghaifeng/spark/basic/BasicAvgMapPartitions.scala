@@ -1,9 +1,10 @@
 /**
   * Illustrates mapPartitions in scala
   */
-package com.git.huanghaifeng.spark.load
+package com.git.huanghaifeng.spark.basic
 
 import org.apache.spark._
+import scala.Iterator
 
 object BasicAvgMapPartitions {
     case class AvgCount(var total: Int = 0, var num: Int = 0) {

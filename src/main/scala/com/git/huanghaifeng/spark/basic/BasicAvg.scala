@@ -1,7 +1,7 @@
 /**
   * Illustrates a simple aggregate in scala to compute the average of an RDD
   */
-package com.git.huanghaifeng.spark.load
+package com.git.huanghaifeng.spark.basic
 
 import org.apache.spark._
 import org.apache.spark.rdd.RDD

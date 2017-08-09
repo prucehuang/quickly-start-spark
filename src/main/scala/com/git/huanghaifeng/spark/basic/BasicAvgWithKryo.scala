@@ -1,7 +1,7 @@
 /**
   * Illustrates a simple fold in scala
   */
-package com.git.huanghaifeng.spark.load
+package com.git.huanghaifeng.spark.basic
 
 import org.apache.spark._
 

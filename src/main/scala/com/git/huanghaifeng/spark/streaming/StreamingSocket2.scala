@@ -1,4 +1,4 @@
-package com.git.huanghaifeng.spark.sparkstreaming
+package com.git.huanghaifeng.spark.streaming
 /**
  * @description
  * 监听localhost的7777端口，对每一行的输入进行计数
@@ -27,7 +27,9 @@ object StreamingSocket2 {
         }
 
         // Create the context with a 1 second batch size
-        val sparkConf = new SparkConf().setAppName("NetworkWordCount")
+        val sparkConf = new SparkConf()
+        sparkConf.setAppName("NetworkWordCount")
+        sparkConf.setMaster("local")
         val ssc = new StreamingContext(sparkConf, Minutes(1))
 
         // Create a socket stream on target ip:port and count the
