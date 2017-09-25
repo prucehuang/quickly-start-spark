@@ -19,7 +19,9 @@ object BasicAvg {
         println(result)
     }
     def computeAvg(input: RDD[Int]) = {
-        input.aggregate((0, 0))((x, y) => (x._1 + y, x._2 + 1),
-            (x, y) => (x._1 + y._1, x._2 + y._2))
+        input.aggregate((0, 0))(
+            (x, y) => (x._1 + y, x._2 + 1),
+            (x, y) => (x._1 + y._1, x._2 + y._2)
+        )
     }
 }

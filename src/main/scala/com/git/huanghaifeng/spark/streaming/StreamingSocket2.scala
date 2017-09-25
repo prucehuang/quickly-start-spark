@@ -43,7 +43,7 @@ object StreamingSocket2 {
 //        wordCounts.saveAsTextFiles("/Users/huanghaifeng/Documents/spark/jobs/output", "result")
         ssc.start()
         // Wait for 10 seconds then exit. To run forever call without a timeout
-//        ssc.awaitTermination(10000)
+        ssc.awaitTermination()
         ssc.stop()
     }
 }

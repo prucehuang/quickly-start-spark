@@ -15,9 +15,12 @@ object BasicAvgWithKryo {
         conf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
         val sc = new SparkContext(conf)
         val input = sc.parallelize(List(1, 2, 3, 4))
-        val result = input.aggregate((0, 0))((x, y) => (x._1 + y, x._2 + 1),
-            (x, y) => (x._1 + y._1, x._2 + y._2))
+
+        val result = input.aggregate((0, 0))(
+            (u, t) => (u._1 + t, u._2 + 1),
+            (u1, u2) => (u1._1 + u2._1, u1._2 + u2._2))
         val avg = result._1 / result._2.toFloat
         println(result)
+        println(avg)
     }
 }
