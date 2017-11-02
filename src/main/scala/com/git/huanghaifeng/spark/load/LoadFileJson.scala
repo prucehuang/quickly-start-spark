@@ -9,8 +9,6 @@ import org.apache.spark._
 import com.alibaba.fastjson.JSON
 
 object LoadFileJson {
-    case class Person(name: String, lovesPandas: Boolean)
-
     def main(args: Array[String]) {
         if (args.length < 3) {
             println("Usage: [sparkmaster] [inputfile] [outputfile]")

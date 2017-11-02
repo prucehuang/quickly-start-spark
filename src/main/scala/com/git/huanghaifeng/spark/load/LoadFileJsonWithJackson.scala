@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.DeserializationFeature
 
 case class Person(name: String, lovesPandas: Boolean) // Note: must be a top level class
+case class PersonSon(name: String, father: Person) // Note: must be a top level class
 
 object LoadFileJsonWithJackson {
 
@@ -42,17 +43,17 @@ object LoadFileJsonWithJackson {
             // list with one element if everything is ok (Some(_)).
             records.flatMap(record => {
                 try {
-                    Some(mapper.readValue(record, classOf[Person]))
+                    Some(mapper.readValue(record, classOf[PersonSon]))
                 } catch {
                     case e: Exception => None
                 }
             })
-        }, true)
-        result.filter(_.lovesPandas).mapPartitions(records => {
-            val mapper = new ObjectMapper with ScalaObjectMapper
-            mapper.registerModule(DefaultScalaModule)
-            records.map(mapper.writeValueAsString(_))
-        })
-            .saveAsTextFile(outputFile)
+        }, true).saveAsTextFile(outputFile)
+//        result.filter(_.lovesPandas).mapPartitions(records => {
+//            val mapper = new ObjectMapper with ScalaObjectMapper
+//            mapper.registerModule(DefaultScalaModule)
+//            records.map(mapper.writeValueAsString(_))
+//        })
+//            .saveAsTextFile(outputFile)
     }
 }
