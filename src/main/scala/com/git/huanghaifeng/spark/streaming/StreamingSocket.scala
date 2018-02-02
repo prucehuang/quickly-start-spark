@@ -3,6 +3,7 @@ package com.git.huanghaifeng.spark.streaming
   * @description
   * 监听localhost的7777端口，处理每一行的输入
   * nc -lk 7777 开启端口 发送数据
+  * nc64.exe -lp 7777 开启端口 发送数据
   * 运行代码
   * spark-submit --class com.hhf.spark.streaming.StreamingSocket ./sparkStreamingExample.jar 192.168.9.223 7777
   * @version V1.0
