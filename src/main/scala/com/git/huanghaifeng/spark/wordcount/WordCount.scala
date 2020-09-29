@@ -1,4 +1,4 @@
-package com.hhf
+package com.git.huanghaifeng.spark.worldcount
 /**
  * @description
  * use scala, spark to count words
